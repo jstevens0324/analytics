@@ -9,6 +9,16 @@
 include 'inc/connection.php';
 include "inc/connect.php";
 
+function getName($email)
+{
+    $sql = "SELECT * FROM campaign_user WHERE email = '$email'";
+    $result = mysql_query($sql) or die('Error in getName: ' . mysql_error());
+    while (($row = mysql_fetch_assoc($result)))
+    {
+        $pid = sprintf('%s*%s*%s',$row['id'],$row['firstName'], $row['lastName']);
+    }
+    return $pid;
+}
 
 function getMessageCount($dsid, $companyId)
 {
@@ -101,41 +111,29 @@ function checkEmail($email, $password)
     }
 }
 
-
-    function getName($id)
+function getUserId($user, $password)
+{
+    $str = md5($password);
+    $sql = "SELECT id FROM campaign_user WHERE email = '$user' AND password = '$str'";
+    $result = mysql_query($sql) or die('Error in getUserId: ' . mysql_error());
+    while (($row = mysql_fetch_assoc($result)))
     {
-        $sql = "SELECT * FROM user WHERE id = '$id'";
-        $result = mysql_query($sql) or die('Error in getName: ' . mysql_error());
-        while (($row = mysql_fetch_assoc($result)))
-        {
-            $pid = sprintf('%s*%s*%s*%s',$row['id'],$row['firstName'], $row['lastName'], $row['lastLogin']);
-        }
-        return $pid;
+        $id = $row['id'];
     }
+    echo $id;
+    return $id;
+}
 
-    function getUserId($user, $password)
+function setLogin($id)
+{
+    $time = date('Y-m-d H:i:s');
+    $sql = "UPDATE campiagn_user SET lastLogin = '$time' WHERE id = '$id'";
+
+    $result = mysql_query($sql) or die('Error in checkEmail function 1: ' . mysql_error());
+    if(!$result)
     {
-        $str = md5($password);
-        $sql = "SELECT id FROM user WHERE email = '$user' AND password = '$str'";
-        $result = mysql_query($sql) or die('Error in getUserId: ' . mysql_error());
-        while (($row = mysql_fetch_assoc($result)))
-        {
-            $id = $row['id'];
-        }
-        echo $id;
-        return $id;
+        return false;
     }
-
-    function setLogin($id)
-    {
-        $time = date('Y-m-d H:i:s');
-        $sql = "UPDATE user SET lastLogin = '$time' WHERE id = '$id'";
-
-        $result = mysql_query($sql) or die('Error in checkEmail function 1: ' . mysql_error());
-        if(!$result)
-        {
-            return false;
-        }
-        return true;
-    }
+    return true;
+}
 ?>

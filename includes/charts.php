@@ -32,19 +32,19 @@
         data.addColumn('number', 'Income');
 
         data.addRows([
-            [new Date(2013, 8 ,17, 6), 30000],
-            [new Date(2013, 8 ,17, 7), 14045],
-            [new Date(2013, 8 ,17, 8), 55022],
-            [new Date(2013, 8 ,17, 9), 75284],
-            [new Date(2013, 8 ,17, 10), 41476],
-            [new Date(2013, 8 ,17, 11), 33322],
-            [new Date(2013, 8 ,17, 12), 30000],
-            [new Date(2013, 8 ,17, 13), 14045],
-            [new Date(2013, 8 ,17, 14), 55022],
-            [new Date(2013, 8 ,17, 15), 75284],
-            [new Date(2013, 8 ,17, 16), 41476],
-            [new Date(2013, 8 ,17, 17), 33322],
-            [new Date(2013, 8 ,17, 18), 41476]
+            [new Date(2013, 8 ,17, 6), 300],
+            [new Date(2013, 8 ,17, 7), 140],
+            [new Date(2013, 8 ,17, 8), 550],
+            [new Date(2013, 8 ,17, 9), 752],
+            [new Date(2013, 8 ,17, 10), 414],
+            [new Date(2013, 8 ,17, 11), 333],
+            [new Date(2013, 8 ,17, 12), 300],
+            [new Date(2013, 8 ,17, 13), 140],
+            [new Date(2013, 8 ,17, 14), 550],
+            [new Date(2013, 8 ,17, 15), 752],
+            [new Date(2013, 8 ,17, 16), 414],
+            [new Date(2013, 8 ,17, 17), 333],
+            [new Date(2013, 8 ,17, 18), 414]
         ]);
 
         var annotatedtimeline = new google.visualization.AnnotatedTimeLine(

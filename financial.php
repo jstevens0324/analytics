@@ -7,6 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
+
 session_start(); //start session
 session_regenerate_id(); // generate session id
 if(!isset($_SESSION['user'])) // if there is no valid session
@@ -14,8 +15,21 @@ if(!isset($_SESSION['user'])) // if there is no valid session
     header("Location: index.php");
 }
 
-include 'header.php';
+include 'inc/functions.php';
 
+$email = $_SESSION['user'];
+$name = getName($email);
+if(isset($name))
+{
+    $definitions = explode("*", $name);
+    $userId = $definitions[0];
+    $firstName = $definitions[1];
+    $lastName = $definitions[2];
+
+    $fullname = $firstName . ' ' . $lastName;
+}
+
+include 'header.php';
 ?>
 
 <body>
@@ -28,14 +42,14 @@ include 'header.php';
 
     <section id="secondary_bar">
         <div class="user">
-            <p>Jessica Krueger (<a href="#">3 Messages</a>)</p>
+            <p><? echo $fullname ?> (<a href="#">3 Messages</a>)</p>
             <a class="logout_user" href="logout.php" title="Logout">Logout</a>
         </div>
         <div class="breadcrumbs_container">
             <article class="breadcrumbs">
                 <a href="#">Infomation Center</a>
                 <div class="breadcrumb_divider"></div>
-                <a href="index.html">Dashboard</a>
+                <a href="home.php">Dashboard</a>
                 <div class="breadcrumb_divider"></div>
                 <a class="current">Financial</a></article>
         </div>

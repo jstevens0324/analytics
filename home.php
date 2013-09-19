@@ -14,6 +14,20 @@ if(!isset($_SESSION['user'])) // if there is no valid session
     header("Location: index.php");
 }
 
+include 'inc/functions.php';
+
+$email = $_SESSION['user'];
+$name = getName($email);
+if(isset($name))
+{
+    $definitions = explode("*", $name);
+    $userId = $definitions[0];
+    $firstName = $definitions[1];
+    $lastName = $definitions[2];
+
+    $fullname = $firstName . ' ' . $lastName;
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -201,14 +215,14 @@ if(!isset($_SESSION['user'])) // if there is no valid session
 <body>
 <header id="header">
     <hgroup>
-        <h1 class="site_title"><a href="index.html">Columbia Animal Hospital</a></h1>
+        <h1 class="site_title"><a href="home.php">Columbia Animal Hospital</a></h1>
         <h2 class="section_title">Dashboard</h2>
     </hgroup>
 </header> <!-- end of header bar -->
 
 <section id="secondary_bar">
     <div class="user">
-        <p>Jessica Krueger (<a href="#">3 Messages</a>)</p>
+        <p><?echo $fullname ?> (<a href="#">3 Messages</a>)</p>
         <a class="logout_user" href="logout.php" title="Logout">Logout</a>
     </div>
     <div class="breadcrumbs_container">
