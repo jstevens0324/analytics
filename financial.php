@@ -354,7 +354,7 @@ include 'header.php';
     </article><!-- end of stats article -->
 
     <article class="module width_full">
-        <header id="modules"><h2 class="section_title">Invoices by Zipcode</h2></header>
+        <header id="modules"><h2 class="section_title">Information by Zipcode</h2></header>
         <div class="module_content">
             <div class="select_me">
                 <select>
@@ -371,10 +371,18 @@ include 'header.php';
                     <option value="lastFiveYears">Last 5 Years</option>
                 </select>
             </div>
-            <article class="stats_graph">
-                <div id="chart_div3" style="height: 400px;"></div>
-            </article>
-            <article class="stats_overview" style="margin-top: 30px;">
+            <div class="testing">
+                <div class="testing_half">
+                    <div id="chart_div3" style="height: 400px;"></div>
+                </div>
+                <div class="testing_half">
+                    <div id="chart_div12" style="height: 400px;"></div>
+                </div>
+                <div class="testing">
+                    <div id="chart_div10" style="height: 400px;"></div>
+                </div>
+            </div>
+            <!--article class="stats_overview" style="margin-top: 30px;">
                 <div class="overview_today">
                     <p class="overview_day">Today</p>
                     <p class="overview_count">$676.74</p>
@@ -402,7 +410,7 @@ include 'header.php';
                     <p class="overview_count">12</p>
                     <p class="overview_type">Avg Hourly Visits</p>
                 </div>
-            </article>
+            </article-->
             <div class="clear"></div>
         </div>
         <footer></footer>
@@ -423,14 +431,14 @@ include 'header.php';
                     <option value="lastFiveYears">Last 5 Years</option>
                 </select>
             </div>
-                <div class="testing">
-                    <div id="comparison" style="height: 400px; width: 50%; float: left;"></div>
-                    <div id='gauge' style="height: 400px; float: right;"></div>
-                </div>
-                <div class="testing">
-                    <div id="comparison2" style="height: 400px; width: 50%; float: left;"></div>
-                    <div id='gauge2' style="height: 400px; float: right;"></div>
-                </div>
+            <div class="testing">
+                <div id="comparison" style="height: 400px; width: 50%; float: left;"></div>
+                <div id='gauge' style="height: 400px; float: right;"></div>
+            </div>
+            <div class="testing">
+                <div id="comparison2" style="height: 400px; width: 50%; float: left;"></div>
+                <div id='gauge2' style="height: 400px; float: right;"></div>
+            </div>
             <div class="clear"></div>
         </div>
         <footer></footer>

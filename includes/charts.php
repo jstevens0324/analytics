@@ -214,13 +214,23 @@
     google.setOnLoadCallback(drawChart);
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Postal Code', 'Invoices'],
-            ['65202', 86],
-            ['65201', 66],
-            ['65203', 78],
-            ['63101', 142],
-            ['63110', 15],
-            ['63199', 212]
+            ['Postal Code', 'Income'],
+            ['34688', 67300],
+            ['34685', 58500],
+            ['34655', 4500],
+            ['33556', 39100],
+            ['34689', 36600],
+            ['34684', 1700],
+            ['34677', 17300],
+            ['34683', 1400],
+            ['34691', 10900],
+            ['33626', 2200],
+            ['34690', 4300],
+            ['34653', 5400],
+            ['34652', 54000],
+            ['33558', 5100],
+            ['34698', 5000],
+            ['other', 25000]
         ]);
 
         var options = {
@@ -234,27 +244,72 @@
 </script>
 
 <script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Postal Code', 'Income'],
+            ['34688', 673],
+            ['34685', 585],
+            ['34655', 450],
+            ['33556', 391],
+            ['34689', 366],
+            ['34684', 177],
+            ['34677', 173],
+            ['34683', 142],
+            ['34691', 109],
+            ['33626', 66],
+            ['34690', 63],
+            ['34653', 54],
+            ['34652', 54],
+            ['33558', 51],
+            ['34698', 50],
+            ['other', 250]
+
+        ]);
+
+        var options = {
+            title: 'Clients by Zipcode'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div12'));
+        chart.draw(data, options);
+    }
+    google.setOnLoadCallback(drawVisualization);
+</script>
+
+
+<script type="text/javascript">
     function drawVisualization() {
         // Create and populate the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Zipcode');
-        data.addColumn('number', 'Invoices');
-        data.addRows([
-            ['65202', {f: '86'}],
-            ['65201', {f: '66'}],
-            ['65203', {f: '78'}],
-            ['63110', {f: '142'}],
-            ['63199', {f: '15'}],
-            ['63101', {f: '212'}]
+        var data = google.visualization.arrayToDataTable([
+            ['Postal Code', 'Number Of Clients', 'Percent of Client Base'],
+            ['34688', 673, 0.16825],
+            ['34685', 585, 0.14625],
+            ['34655', 450, 0.1125],
+            ['33556', 391,0.09775],
+            ['34689', 366,0.0915],
+            ['34684', 177,0.04425],
+            ['34677', 173,0.04425],
+            ['34683', 142,0.0355],
+            ['34691', 109,0.02725],
+            ['33626', 66,0.0165],
+            ['34690', 63,0.0165],
+            ['34653', 54,0.0135],
+            ['34652', 54,0.0135],
+            ['33558', 51,0.0135],
+            ['34698', 50,0.0135],
+            ['other', 250,0.0625]
         ]);
 
         // Create and draw the visualization.
         var table = new google.visualization.Table(document.getElementById('chart_div10'));
 
-        var formatter = new google.visualization.TableArrowFormat();
-        formatter.format(data, 1); // Apply formatter to second column
+        var formatter = new google.visualization.TableNumberFormat(
+            {suffix: "%"});
+        formatter.format(data, 2); // Apply formatter to second column
 
-        table.draw(data, {allowHtml: true, showRowNumber: true});
+        table.draw(data, {allowHtml: true, showRowNumber: false});
     }
     google.setOnLoadCallback(drawVisualization);
 </script>
