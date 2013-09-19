@@ -1,0 +1,120 @@
+.moveSpanRight {/* Put in place to float graphs to the right. span6 wouldn't work. */
+	float: left;
+	min-height: 1px;
+	margin-right: 20px;
+	margin-bottom: 5px;
+	width: 100%;
+}
+.moveSpanLeft {/* Put in place to float graphs to the right. span6 wouldn't work. */
+    float: left;
+    min-height: 1px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    width: 50%;
+}
+
+.moveSpanBarChart {/* Put in place to float graphs to the right. span6 wouldn't work. */
+	float: left;
+	min-height: 1px;
+	margin-right: 20px;
+	margin-bottom: 5px;
+	width: 960px;
+}
+
+.chartTitle {
+	color: #000 !important;
+
+	text-align: center;
+	/*font-size: 1.2em !important;*/
+	padding: 15px !important;
+}
+
+.chartBox {
+	width: 100%;
+	background-color: #FAFAFA;
+}
+
+.chartBoxFooter {
+	width: 100%;
+	color: #3A3A3A;
+	background-color: #B2E0F0;
+	border-top: 1px solid #B2E0F0;
+	padding-bottom: 5px;
+}
+
+.chartFootLeft {
+	width: 129px;
+	float: left;
+	margin-top: 5px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.largeNum {
+	width: 100%;
+
+	font-family: "Arial Rounded MT Bold" !important;
+	font-size: 3.5em !important;
+	color: #424242 !important;
+	text-align: center;
+}
+
+.largeNum span {
+	font-size: 2.5em;
+}
+
+.chartFootNum {
+	width: 100%;
+	font-weight: 600 !important;
+	font-size: 1.2em !important;
+	padding: 15px 0;
+}
+
+.chartFootDesc {
+	width: 100%;
+}
+
+.ChartFootRight {
+	width: 129px;
+	float: left;
+	margin-top: 5px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+.ChartFootCenter {
+	width: 33%;
+	float: left;
+	text-align: center;
+}
+.ChartFootRightThirds {
+	width: 33%;
+	float: left;
+	text-align: center;
+}
+.chartFootLeftThirds {
+	width: 33%;
+	float: left;
+	text-align: center;
+}
+
+.CenterNumber {
+	float: left;
+	margin: -142px auto 0 41%;
+	position: relative;
+	font-family: "Arial Rounded MT Bold";
+	font-size: 3.5em;
+}
+.innerChart {
+	width: 100%;
+	margin: 0 auto;
+}
+.leftChart {
+	width: 49%;
+	float: left;
+}
+.rightChart {
+	width: 49%;
+	float: left;
+}
