@@ -67,7 +67,6 @@ include 'header.php';
             <li class="icn_categories"><a href="#">Retention</a></li>
             <li class="icn_tags"><a href="#">Marketing</a></li>
             <li class="icn_compliance"><a href="#">Compliance</a></li>
-            <li class="icn_vpat"><a href="#">VPAT</a></li>
         </ul>
         <h3>Campaign</h3>
         <ul class="toggle">

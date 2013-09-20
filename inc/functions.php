@@ -17,6 +17,7 @@ function getName($email)
     {
         $pid = sprintf('%s*%s*%s',$row['id'],$row['firstName'], $row['lastName']);
     }
+    mysql_close();
     return $pid;
 }
 
@@ -36,7 +37,7 @@ SQL;
         {
             $num = $id['count'];
         }
-
+        mysql_close();
         return $num;
     }
 
@@ -103,10 +104,12 @@ function checkEmail($email, $password)
     $result = mysql_query($sql) or die('Could not find member: ' . mysql_error());
     if (!mysql_result($result, 0, 0) > 0)
     {
+        mysql_close();
         return false;
     }
     else
     {
+        mysql_close();
         return true;
     }
 }
@@ -120,7 +123,8 @@ function getUserId($user, $password)
     {
         $id = $row['id'];
     }
-    echo $id;
+    //echo $id;
+    mysql_close();
     return $id;
 }
 
@@ -134,6 +138,7 @@ function setLogin($id)
     {
         return false;
     }
+    mysql_close();
     return true;
 }
 ?>
